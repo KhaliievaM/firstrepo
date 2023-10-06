@@ -11,7 +11,7 @@ const NavBar = () => {
             <a href="">News</a>
         </div>
         <div>
-            <a href="">Music</a>
+            <a href="">Video</a>
         </div>
         <div>
             <a href="">Settings</a>
@@ -19,3 +19,4 @@ const NavBar = () => {
     </nav>
 }
 export default NavBar;
+

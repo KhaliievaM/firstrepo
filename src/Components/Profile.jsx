@@ -2,7 +2,7 @@ import React from "react";
 const Profile = () => {
     return <div className="content">
         <div>
-            <img src="https://media.istockphoto.com/id/482744067/photo/nature-background.jpg?s=612x612&w=0&k=20&c=J4yPBeo7vGTzPw5zUAhg8M0zcRkFVmXdgl9xMWK_drc=" alt=""/>
+            <div className="city-street"></div>
         </div>
         <div>
             ava+description

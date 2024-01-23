@@ -37,14 +37,15 @@
 /*  }*/
 /*}*/
 body{
-  background-image: url("modern-city-skyline-background_77417-791.jpg");
+  background-image: url("Images/white-background-with-wavy-lines_23-2149124447.jpg");
   background-size: cover;
+  /*background-color: #efe1ff;*/
   display: grid;
 
 }
 .app-wrapper{
   width: 1200px;
-  margin: 0 auto;
+  margin: 1em auto;
   display: grid;
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
@@ -53,18 +54,48 @@ body{
   "h h"
   "n c";
 }
+img{
+  border-radius: 0.5em;
+}
 .header{
   grid-area: h;
-  background: linear-gradient(#2a2573, #878efa);
+  /*background-color: #9359c3;*/
+  background-color: #013243;
+  border-radius: 0.5em;
 }
 .header img{
   width: 100px;
 }
 .nav{
   grid-area: n;
-  background:  linear-gradient(#878efa, #2a2573);
+  /*background-color: #9359c3;*/
+  background-color: #013243;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+.nav a{
+  font-size: 1.3em;
+  text-decoration: none;
+  color: white;
 }
 .content{
   grid-area: c;
 
+}
+.content .city-street{
+  background-image: url("Images/abstract-fluid-banner-bright-yellow-color_1017-32329.jpg");
+  width: 65em;
+  height: 20em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*background-position: -50px -50px;*/
+  border-radius: 0.5em;
+}
+.logo{
+  background-image: url("Images/yellow-abstract-circle-logo-icon-free-png.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 3.2em;
+  height: 3.2em;
+  margin: 0.28em 2em;
 }

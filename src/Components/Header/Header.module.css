@@ -1,0 +1,17 @@
+.header{
+    grid-area: h;
+    /*background-color: #9359c3;*/
+    background-color: #013243;
+    border-radius: 0.5em;
+}
+.header img{
+    width: 100px;
+}
+.logo{
+    background-image: url("../../Images/yellow-abstract-circle-logo-icon-free-png.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 3.2em;
+    height: 3.2em;
+    margin: 0.28em 2em;
+}

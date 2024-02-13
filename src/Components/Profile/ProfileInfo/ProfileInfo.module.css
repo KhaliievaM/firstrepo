@@ -1,0 +1,16 @@
+.cap{
+    background-image: url("../../../Images/abstract-fluid-banner-bright-yellow-color_1017-32329.jpg");
+    width: 65em;
+    height: 20em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background-position: -50px -50px;*/
+    border-radius: 0.5em;
+}
+.mainClass.secondClass{
+    color: red;
+    border: red 2px solid;
+}
+.descriptionBlock{
+    padding: 0.6em;
+}

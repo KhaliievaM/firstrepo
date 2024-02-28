@@ -1,0 +1,44 @@
+.oneFriend {
+    display: grid;
+}
+.oneFriend img {
+    width: 7em;
+    height: 7em;
+    border-radius: 100%;
+    margin: 0.5em;
+    box-shadow: 2px 2px 5px #464545;
+}
+
+.oneFriend a {
+    display: grid;
+    font: 1.2em sans-serif;
+    color: #013243;
+}
+.imageEndName {
+    display: grid;
+    gap: 0.5em;
+    text-decoration: none;
+    justify-items: center;
+    margin-bottom: 0.5em;
+    color: #013243;
+}
+
+.imageEndName:hover{
+    display: grid;
+    gap: 0.5em;
+    text-decoration: none;
+    justify-items: center;
+    margin-bottom: 0.5em;
+    background-image: linear-gradient(to top left, rgba(50, 133, 169, 0.4), rgba(15, 90, 129, 0.48));
+    color: white;
+    text-shadow: 1px 1px 2px #484747;
+}
+/*.active {*/
+/*    display: grid;*/
+/*    gap: 0.5em;*/
+/*    text-decoration: none;*/
+/*    justify-items: center;*/
+
+/*    background: rgba(50, 133, 169, 0.62);*/
+/*    color: #036c91;*/
+/*}*/

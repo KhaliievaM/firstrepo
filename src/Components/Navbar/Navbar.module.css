@@ -5,6 +5,10 @@
     border-radius: 0.5em;
     padding: 1em;
 }
+.menu{
+    display: grid;
+    row-gap: 2em;
+}
 .item{
     font-size: 1.3em;
     text-decoration: none;

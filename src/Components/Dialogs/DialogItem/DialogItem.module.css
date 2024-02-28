@@ -1,0 +1,36 @@
+.friend {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 1em;
+    /*background-image: linear-gradient(to top left, rgba(91, 144, 171, 0.61), rgba(15, 90, 129, 0.58));*/
+    background-color: #568da8;
+}
+
+.friend:hover {
+    background-color: rgba(86, 141, 168, 0.63);
+    color: #013243;
+}
+
+.friend img {
+    width: 45px;
+    height: 45px;
+    padding: 0.5em;
+    border-radius: 100%;
+    background-size: contain;
+
+}
+
+.dialog {
+    color: white;
+    font: 18px sans-serif;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+.active {
+    color: #fff200;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #868686;
+    text-decoration: none;
+    padding: 0.5em;
+}

@@ -1,0 +1,34 @@
+.messageLeft {
+    background-image: linear-gradient(to top right, #5b90ab, #0f5a81);
+    color: white;
+    padding: 0.5em;
+    max-width: 25em;
+    border-radius: 0.7em 0.7em 0.7em 0;
+}
+.messageRight {
+    background-image: linear-gradient(to top left, #5b90ab, #0f5a81);
+    color: white;
+    padding: 0.5em;
+    max-width: 25em;
+    border-radius: 0.7em 0.7em 0 0.7em;
+}
+
+.messageContainer {
+    display: grid;
+    justify-content: start;
+
+
+}
+.messageContainerOutBound {
+    display: grid;
+    justify-content: end;
+}
+
+
+/*let messagesElements = props.state.messages.map(m => {*/
+/*                                                       console.log(m.isInbound);*/
+/*let msg = <Message message={m}/>*/
+/*                               console.log(msg);*/
+/*return msg;*/
+/*});*/
+

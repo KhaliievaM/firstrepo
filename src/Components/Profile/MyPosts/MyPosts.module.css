@@ -1,3 +1,9 @@
 .postsBlock{
     padding: 0.6em;
 }
+.textAreaNewPost{
+    padding: 0.7em;
+    background: rgba(168, 173, 173, 0.35);
+    font-size: 14px;
+    box-shadow: inset 1px 1px 1px gray;
+}

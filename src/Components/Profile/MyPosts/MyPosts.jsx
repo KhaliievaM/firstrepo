@@ -1,25 +1,32 @@
 import React from "react";
 import obj from './MyPosts.module.css'
 import Post from "./Post/Post";
-const MyPosts = () => {
-    let postData = [
-        {id: "1", message: "Hi!", likesCount: 5, dislikesCount: 0},
-        {id: "2", message: "It's my first message", likesCount: 10, dislikesCount: 1},
-    ]
-    return(
+
+const MyPosts = (props) => {
+    let newPostElement = React.createRef();
+    let addNewPost = () => {
+        props.addPost();
+    }
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
+    let postsElement = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}
+                                                  dislikesCount={p.dislikesCount}/>)
+    return (
         <div className={obj.postsBlock}>
             <h3>My post</h3>
             <div>
-                <textarea name="" id="" cols="30" rows="5"></textarea>
+                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}
+                          className={obj.textAreaNewPost}/>
             </div>
             <div>
-                <button>Add Post</button>
+                <button onClick={addNewPost}>Add Post</button>
             </div>
             <div>
-                <Post message = {postData[0].message} likesCount = {postData[0].likesCount} dislikesCount = {postData[0].dislikesCount}/>
-                <Post message = {postData[1].message}  likesCount = {postData[1].likesCount} dislikesCount = {postData[1].dislikesCount}/>
+                {postsElement}{/*/!*<Post message = {postData[0].message} likesCount = {postData[0].likesCount} dislikesCount = {postData[0].dislikesCount}/>*!/ приклад*/}
             </div>
         </div>
     )
-    }
+}
 export default MyPosts;

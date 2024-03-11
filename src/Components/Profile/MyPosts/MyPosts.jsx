@@ -5,19 +5,20 @@ import Post from "./Post/Post";
 const MyPosts = (props) => {
     let newPostElement = React.createRef();
     let addNewPost = () => {
-        props.addPost();
+        props.profile.dispatch({type:'ADD-POST'});
     }
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        let action = {type:'UPDATE-NEW-POST-TEXT', newText: text};
+        props.profile.dispatch(action);
     }
-    let postsElement = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}
+    let postsElement = props.profile.state.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount}
                                                   dislikesCount={p.dislikesCount}/>)
     return (
         <div className={obj.postsBlock}>
             <h3>My post</h3>
             <div>
-                <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}
+                <textarea onChange={onPostChange} ref={newPostElement} value={props.profile.state.profilePage.newPostText}
                           className={obj.textAreaNewPost}/>
             </div>
             <div>

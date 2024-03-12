@@ -80,7 +80,8 @@
 //
 // export default state;
 import profile from "../Components/Profile/Profile";
-
+let ADD_POST = 'ADD-POST';
+let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 let store = {
     dialogs: {
         state: {
@@ -162,14 +163,14 @@ let store = {
         //     this._callSubscriber(this.state);
         // },
         dispatch(action) {
-            if(action.type === 'ADD-POST'){
+            if(action.type === ADD_POST){
                 let newPost = {
                     id: "1", message: this.state.profilePage.newPostText, likesCount: 7, dislikesCount: 2
                 };
                 this.state.profilePage.posts.push(newPost);
                 this.state.profilePage.newPostText = '';
                 this._callSubscriber(this.state);
-            } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            } else if (action.type === UPDATE_NEW_POST_TEXT) {
                 this.state.profilePage.newPostText = action.newText;
                 this._callSubscriber(this.state);
             }
@@ -199,4 +200,15 @@ let store = {
         }
     },
 };
+export const addPostActionCreator = () => {
+    return{
+        type:'ADD-POST'
+    }
+}
+export const updateNewPostTextPostActionCreator = (text) => {
+    return{
+        type:'UPDATE-NEW-POST-TEXT',
+        newText: text,
+    }
+}
 export default store;

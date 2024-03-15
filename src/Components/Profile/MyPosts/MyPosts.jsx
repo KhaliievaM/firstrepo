@@ -6,9 +6,11 @@ import {addPostActionCreator} from "../../../Redux/state";
 
 const MyPosts = (props) => {
     let newPostElement = React.createRef();
+
     let addNewPost = () => {
         props.profile.dispatch(addPostActionCreator());
     }
+
     let onPostChange = () => {
         let text = newPostElement.current.value;
         let action = updateNewPostTextPostActionCreator(text);

@@ -81,7 +81,9 @@
 // export default state;
 import profile from "../Components/Profile/Profile";
 let ADD_POST = 'ADD-POST';
-let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+let UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+let ADD_MESSAGE = 'ADD-MESSAGE';
+let UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
 let store = {
     dialogs: {
         state: {
@@ -89,11 +91,7 @@ let store = {
                 messages: [
                     {id: "1", isInbound: true, message: "Hi!"},
                     {id: "2", isInbound: false, message: "How are you?"},
-                    {
-                        id: "3",
-                        isInbound: true,
-                        message: "Who are you Who are you Who are you Who are you Who are you Who are you Who are you Who are you Who are you Who are you Who are you Who are you Who are you Who are you?"
-                    },
+                    {id: "3", isInbound: true, message: "Who are you Who are you Who are you Who are you Who are you Who are you Who are you Who are you?"},
                     {id: "4", isInbound: false, message: "Where are you?"},
                     {id: "5", isInbound: true, message: "Bye-bye!"},
                 ],
@@ -125,14 +123,14 @@ let store = {
         //     this._callSubscriber(this.state);
         // },
         dispatch(action) {
-          if(action.type === 'ADD-MESSAGE'){
+          if(action.type === ADD_MESSAGE){
               let newMessage = {
                   id: "6", isInbound: false, message: this.state.dialogsPage.newMessageText,
               };
               this.state.dialogsPage.messages.push(newMessage);
               this.state.dialogsPage.newMessageText = '';
               this._callSubscriber(this.state);
-          } else if (action.type === 'UPDATE-NEW-MESSAGE') {
+          } else if (action.type === UPDATE_NEW_MESSAGE) {
               this.state.dialogsPage.newMessageText = action.newMessage;
               this._callSubscriber(this.state);
           }
@@ -209,6 +207,17 @@ export const updateNewPostTextPostActionCreator = (text) => {
     return{
         type:'UPDATE-NEW-POST-TEXT',
         newText: text,
+    }
+}
+export const addMessageActionCreator = () => {
+    return{
+        type:'ADD-MESSAGE'
+    }
+}
+export const updateNewMessageActionCreator = (message) => {
+    return{
+        type:'UPDATE-NEW-MESSAGE',
+        newMessage: message,
     }
 }
 export default store;

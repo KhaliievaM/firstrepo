@@ -2,8 +2,8 @@ import React from "react";
 import obj from "./Dialogs.module.css"
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
-import {addMessageActionCreator} from "../../Redux/state";
-import {updateNewMessageActionCreator} from "../../Redux/state";
+import {addMessageActionCreator} from "../../Redux/dialogs-reducer";
+import {updateNewMessageActionCreator} from "../../Redux/dialogs-reducer";
 
 const Dialogs = (props) => {
     let newMessageElement = React.createRef();
@@ -11,8 +11,8 @@ const Dialogs = (props) => {
     let addNewMessage = () => {
         props.dialogs.dispatch(addMessageActionCreator());
     }
-    let onMessageChange = () => {
-        let message = newMessageElement.current.value;
+    let onMessageChange = (e) => {
+        let message = e.target.value;// let message = newMessageElement.current.value;
         let action = updateNewMessageActionCreator(message);
         props.dialogs.dispatch(action);
     }
@@ -30,7 +30,7 @@ const Dialogs = (props) => {
                 {messagesElements}
                 <div>
                     <textarea value={props.dialogs.state.dialogsPage.newMessageText} onChange={onMessageChange}
-                              ref={newMessageElement} className={obj.txtSendMessage}/>
+                              ref={newMessageElement} className={obj.txtSendMessage} placeholder='hello'/>
                 </div>
                 <div>
                     <button className={obj.btnSendMessage} onClick={addNewMessage}>Send message</button>

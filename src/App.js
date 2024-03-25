@@ -12,7 +12,7 @@ import Friends from "./Components/Friends/Friends";
 
 
 function App(props) {
-
+    //debugger
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -20,12 +20,12 @@ function App(props) {
                 <NavBar/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/profile/*" element={<Profile profile={props.store.profile} />}/>
-                        <Route path="/dialogs/*" element={<Dialogs dialogs={props.store.dialogs} />}/>
+                        <Route path="/profile/*" element={<Profile profilePage={props.state.profilePage} dispatch = {props.dispatch}/>}/>
+                        <Route path="/dialogs/*" element={<Dialogs dialogsPage={props.state.dialogsPage} dispatch = {props.dispatch}/>}/>
                         <Route path="/news/*" element={<News/>}/>
                         <Route path="/music/*" element={<Music/>}/>
                         <Route path="/settings/*" element={<Settings/>}/>
-                        <Route path="/friends/*" element={<Friends sidebar={props.store.sidebar}/>}/>
+                        <Route path="/friends/*" element={<Friends sidebar={props.state.sidebar} dispatch = {props.dispatch}/>}/>
                         {/*profilePage={props.store.state.profilePage}*/}
                     </Routes>
                 </div>
